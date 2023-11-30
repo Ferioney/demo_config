@@ -1,0 +1,28 @@
+[
+  {
+    "httpRequest": {
+      "path": "/demo-config-tester/default/demo_label"
+    },
+    "httpResponse": {
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": "{\n  \"name\": \"demo-config-tester\",\n  \"profiles\": [\n    \"default\"\n  ],\n  \"label\": \"demo_label\",\n  \"version\": null,\n  \"state\": null,\n  \"propertySources\": [\n    {\n      \"name\": \"git@github.com:configuration/application.yml\",\n      \"source\": {\n        \"feign.hystrix.enabled\": true\n      }\n    }\n  ]\n}  ",
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/demo-config-tester/prod/demo_label"
+    },
+    "httpResponse": {
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": " {\n  \"name\": \"demo-config-tester\",\n  \"profiles\": [\n    \"prod\"\n  ],\n  \"label\": \"demo_label\",\n  \"version\": null,\n  \"state\": null,\n  \"propertySources\": [\n    {\n      \"name\": \"git@github.com:configuration/application-kafkaPreprod.properties\",\n      \"source\": {\n        \"tester.proprs.prop5\": \"app_studioPreprod5\",\n        \"tester.proprs.prop6\": \"app_studioPreprod6\"\n      }\n    },\n    {\n      \"name\": \"git@github.com:configuration/application-prod.yml\",\n      \"source\": {\n        \"spring.profiles.include\": \"kafkaPreprod\",\n        \"tester.proprs.prop1\": \"app_preprod1\",\n        \"tester.proprs.prop5\": \"app_preprod5\",\n        \"tester.proprs.prop6\": \"app_preprod6\"\n      }\n    },\n    {\n      \"name\": \"git@github.com:configuration/application.yml\",\n      \"source\": {\n        \"feign.hystrix.enabled\": true\n      }\n    }\n  ]\n} "
+    }
+  }
+]
